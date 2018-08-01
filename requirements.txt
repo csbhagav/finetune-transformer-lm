@@ -1,0 +1,11 @@
+joblib
+numpy
+sklearn
+scipy
+pandas
+ftfy
+
+tensorflow-gpu
+spacy
+
+tqdm
