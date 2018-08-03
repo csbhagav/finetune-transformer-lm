@@ -14,8 +14,8 @@ from sklearn.utils import shuffle
 from sklearn.metrics import accuracy_score
 
 from opt import adam, warmup_cosine, warmup_linear, warmup_constant
-from datasets import rocstories
-from analysis import rocstories as rocstories_analysis
+from datasets import rocstories, abd_rocstories
+from analysis import abd_rocstories as rocstories_analysis
 from text_utils import TextEncoder
 from utils import encode_dataset, flatten, iter_data, find_trainable_variables, get_ema_vars, convert_gradient_to_tensor, shape_list, ResultLogger, assign_to_gpu, average_grads, make_path
 
@@ -368,7 +368,7 @@ if __name__ == '__main__':
     encoder = text_encoder.encoder
     n_vocab = len(text_encoder.encoder)
 
-    (trX1, trX2, trX3, trY), (vaX1, vaX2, vaX3, vaY), (teX1, teX2, teX3) = encode_dataset(rocstories(data_dir), encoder=text_encoder)
+    (trX1, trX2, trX3, trY), (vaX1, vaX2, vaX3, vaY), (teX1, teX2, teX3) = encode_dataset(abd_rocstories(data_dir), encoder=text_encoder)
     n_y = 2
     encoder['_start_'] = len(encoder)
     encoder['_delimiter_'] = len(encoder)
