@@ -19,7 +19,7 @@ def _rocstories(path):
         y = []
         for i, line in enumerate(tqdm(list(f), ncols=80, leave=False)):
             if i > 0:
-                s = ' '.join([line[1]] + [line[2]])
+                s = ' '.join([line[1]] + [line[3]])
                 c1 = line[5]
                 c2 = line[6]
                 st.append(s)
