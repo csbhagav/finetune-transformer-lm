@@ -19,6 +19,46 @@ from analysis import abd_rocstories as rocstories_analysis
 from text_utils import TextEncoder
 from utils import encode_dataset, flatten, iter_data, find_trainable_variables, get_ema_vars, convert_gradient_to_tensor, shape_list, ResultLogger, assign_to_gpu, average_grads, make_path
 
+
+# Global variables
+
+desc = None
+dataset = None
+log_dir = None
+save_dir = None
+data_dir = None
+submission_dir = None
+submit = None
+analysis = None
+seed = None
+n_iter = None
+n_batch = None
+max_grad_norm = None
+lr = None
+lr_warmup = None
+n_ctx = None
+n_embd = None
+n_head = None
+n_layer = None
+embd_pdrop = None
+attn_pdrop = None
+resid_pdrop = None
+clf_pdrop = None
+l2 = None
+vector_l2 = None
+n_gpu = None
+opt = None
+afn = None
+lr_schedule = None
+encoder_path = None
+bpe_path = None
+n_transfer = None
+lm_coef = None
+b1 = None
+b2 = None
+e = None
+
+
 def gelu(x):
     return 0.5*x*(1+tf.tanh(math.sqrt(2/math.pi)*(x+0.044715*tf.pow(x, 3))))
 
