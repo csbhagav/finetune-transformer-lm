@@ -3,7 +3,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, f1_score
 
 from datasets import _rocstories, _abd_rocstories
 
@@ -28,3 +28,6 @@ def abd_nli(data_dir, pred_path, log_path):
     valid_accuracy = logs[best_validation_index]['va_acc']
     print('ABD NLI Valid Accuracy: %.2f'%(valid_accuracy))
     print('ABD NLI Test Accuracy:  %.2f'%(test_accuracy))
+
+    test_f1 = f1_score(labels, preds)*100.
+    print('ABD NLI Test F1 Score:  %.2f'%(test_f1))
