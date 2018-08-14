@@ -59,7 +59,7 @@ def rocstories(data_dir, n_train=1497, n_valid=374):
 
 def _abd_rocstories(path):
     with open(path) as f:
-        f = csv.reader(f)
+        f = csv.reader(f, dialect="excel-tab")
         st = []
         ct1 = []
         ct2 = []
